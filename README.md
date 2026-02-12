@@ -5,7 +5,7 @@
 ---
 ### 🔗 Live Demo
 
-![Preview](images/pass.png)
+![Preview](images/pass2.png)
 สามารถลองใช้งานแอปพลิเคชันตัวจริงได้ที่นี่เลยค่ะ  
 👉 **[https://miyomui-flight-price-prediction.streamlit.app/](https://miyomui-flight-price-prediction.streamlit.app/)**
 

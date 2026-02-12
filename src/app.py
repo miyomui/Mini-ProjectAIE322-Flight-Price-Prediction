@@ -48,24 +48,33 @@ st.markdown("""
         visibility: hidden; 
     }
 
-/* === แก้ไขจุดนี้: ซ่อนตัวหนังสือแต่ให้แสดงเป็นไอคอนสัญลักษณ์แทน === */
+/* --- แก้จุดที่ 1: เปลี่ยนตัวหนังสือเป็นสัญลักษณ์ » --- */
     [data-testid="collapsedControl"] {
-        color: transparent !important; /* ทำให้ตัวหนังสือโปร่งใส */
-        font-size: 0px !important;     /* ลดขนาดตัวหนังสือเป็น 0 */
-    }
-    
-    [data-testid="collapsedControl"] svg {
-        fill: #6B4C5E !important;      /* เปลี่ยนสีไอคอนให้เห็นชัด */
-        display: block !important;
-        visibility: visible !important;
-        width: 28px !important;
-        height: 28px !important;
+        font-size: 0 !important; /* ฆ่าตัวหนังสือทิ้ง */
+        color: transparent !important;
+        width: 40px !important;
+        height: 40px !important;
+        position: relative !important;
     }
 
-    [data-testid="stDecoration"] {
+    /* ใส่สัญลักษณ์ » แทนที่ตัวหนังสือ แม้ตอนชี้ก็จะเป็นสัญลักษณ์นี้ */
+    [data-testid="collapsedControl"]::before {
+        content: "<3"; /* นี่คือสัญลักษณ์ Symbol ที่คุณต้องการ */
+        font-size: 32px !important;
+        color: #6B4C5E !important; /* สีเดียวกับธีม */
+        visibility: visible !important;
+        display: block !important;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -55%);
+    }
+
+    /* ซ่อน SVG เดิมทิ้งไปเลยเพื่อไม่ให้ทับซ้อน */
+    [data-testid="collapsedControl"] svg {
         display: none !important;
     }
-
+    
     /* === Sidebar สวยงาม === */
     section[data-testid="stSidebar"] {
         background: linear-gradient(180deg, #FFD1DC 0%, #FFE3EA 100%) !important;
@@ -206,36 +215,27 @@ st.markdown("""
         box-shadow: 0 2px 8px rgba(255, 107, 157, 0.3) !important;
     }
 
-    /* === ปุ่มสีชมพูสดใส - ไม่ใช่สีดำ === */
+/* === เปลี่ยนปุ่มเป็นสีชมพูเข้ม (Dark Pink) === */
     div.stButton > button {
-        background: linear-gradient(135deg, #FF6B9D 0%, #FFB3D9 100%) !important;
+        /* เปลี่ยนจาก Gradient อ่อน เป็นสีชมพูเข้ม #D81B60 */
+        background: linear-gradient(135deg, #D81B60 0%, #AD1457 100%) !important;
         color: #FFFFFF !important;
         border-radius: 50px !important;
         height: 56px !important;
         width: 100% !important;
-        font-size: 20px !important;
+        font-size: 22px !important;
         font-weight: 700 !important;
-        box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4) !important;
+        /* ปรับเงาให้เข้ากับสีเข้ม */
+        box-shadow: 0 6px 20px rgba(216, 27, 96, 0.4) !important;
         border: none !important;
         transition: all 0.3s ease !important;
-        margin-top: 20px !important;
     }
     
+    /* เอฟเฟกต์ตอนเอาเมาส์ไปชี้ ให้เข้มขึ้นอีกนิด */
     div.stButton > button:hover {
-        transform: translateY(-3px) !important;
-        box-shadow: 0 10px 30px rgba(255, 107, 157, 0.5) !important;
-        background: linear-gradient(135deg, #FF5A8F 0%, #FF9EC9 100%) !important;
-    }
-    
-    div.stButton > button:active {
-        transform: translateY(0) !important;
-    }
-    
-    div.stButton > button p,
-    div.stButton > button span,
-    div.stButton > button div { 
-        color: #FFFFFF !important; 
-        font-weight: 700 !important;
+        background: linear-gradient(135deg, #AD1457 0%, #880E4F 100%) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 25px rgba(216, 27, 96, 0.5) !important;
     }
 
     /* === Hero Section === */
@@ -450,6 +450,8 @@ st.markdown("""
     div[data-testid="stMarkdownContainer"] pre {
         display: none !important;
     }
+
+    
     
 </style>
 """, unsafe_allow_html=True)
@@ -472,18 +474,19 @@ model, model_columns = load_model()
 # 4. Sidebar
 # ------------------------------------------------------------------------------
 with st.sidebar:
+    
     # Totoro GIF
     st.markdown("""
     <div style='text-align: center; margin: 0 auto 24px; padding: 16px;'>
-        <img src='https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWR3cWJuampncGp4NWV0c2hwYWM2MjZhNXR0OWg2MjhiOXlnYnZsMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VMcwUIgBTrk3Q3JjR0/giphy.gif' 
+        <img src='https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHlvbmV1MndmNXQ4dWk3bGpwNG1kM2EyeGw5d2hsY3l1aDVpMTh2NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/1msHrXC3xHduwy89Ze/giphy.gif' 
              style='width: 200px; border-radius: 16px;'>
     </div>
     """, unsafe_allow_html=True)
     
-    st.markdown("<h2 style='text-align: center; color: #D81B60 !important; margin-bottom: 30px; font-size: 28px;'>🎌 วางแผนเที่ยว</h2>", unsafe_allow_html=True)
+    
 
     with st.form("prediction_form"):
-        # ✈️ สายการบิน
+        # ✈️ เลือกสายการบิน
         with st.container(border=True):
             st.markdown("<b>✈️ สายการบิน</b>", unsafe_allow_html=True)
             airline = st.selectbox(
@@ -492,7 +495,7 @@ with st.sidebar:
                 label_visibility="collapsed"
             )
 
-        # 🎫 รูปแบบการบิน
+        # 🎫 เลือกรูปแบบการบิน
         with st.container(border=True):
             st.markdown("<b>🎫 รูปแบบการบิน</b>", unsafe_allow_html=True)
             flight_type = st.radio(
@@ -501,7 +504,7 @@ with st.sidebar:
                 label_visibility="collapsed"
             )
 
-        # 🗓️ วันเดินทาง
+        # 🗓️ เลือกวันเดินทาง
         with st.container(border=True):
             st.markdown("<b>🗓️ วันเดินทาง</b>", unsafe_allow_html=True)
             day_name = st.selectbox(
@@ -527,6 +530,7 @@ with st.sidebar:
 # ------------------------------------------------------------------------------
 
 # Hero Section
+
 st.markdown("""
 <div class="hero-container">
     <h1 class="hero-title">Japan Flight Predictor 🌸</h1>
@@ -654,7 +658,7 @@ if submit_button:
             st.markdown(f"""
             <div style='text-align: center; margin-top: 10px; padding: 15px; background: rgba(255,255,255,0.6); border-radius: 12px; border: 2px solid #FFD1DC;'>
                 <p style='color: #6B4C5E !important; font-size: 14px; margin: 0;'>
-                    💡 <b>Tip:</b> ราคานี้ทำนายโดย AI ลองเปลี่ยนวันเดินทางเพื่อเช็กราคาที่ถูกกว่าได้นะคะ!
+                     <b>💡Tip:</b> ราคานี้ทำนายโดย AI ลองเปลี่ยนวันเดินทางเพื่อเช็กราคาที่ถูกกว่าได้นะคะ!
                 </p>
             </div>
             """, unsafe_allow_html=True)
