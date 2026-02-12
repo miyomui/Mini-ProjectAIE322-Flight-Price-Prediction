@@ -7,9 +7,10 @@
 ![Preview](images/pass2.png)
 <div align="center">
   <a href="[https://miyomui-flight-price-prediction.streamlit.app/](https://miyomui-flight-price-prediction.streamlit.app/)" target="_blank" rel="noopener noreferrer">
-    <img src="images/button.png" alt="ลองใช้งานแอปจริงที่นี่" width="200">
+    <img src="images/button.png" alt="ลองใช้งานแอปจริงที่นี่" width="250">
   </a>
 </div>
+
 
 
 
