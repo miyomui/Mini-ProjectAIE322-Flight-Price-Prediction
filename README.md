@@ -40,13 +40,22 @@
 
 
 ## 📂 Project Structure
-* 📁 `data/`: เก็บชุดข้อมูลหลักที่ใช้ในการวิเคราะห์และทำนายราคา (`bkk_tokyo_flight_prices.csv`)
-* 📁 `images/`: เก็บไฟล์ภาพนิ่งที่ใช้ประกอบในแอปพลิเคชัน
-* 📁 `models/`: เก็บโมเดล Machine Learning ที่ฝึกสอนเสร็จแล้วในรูปแบบไฟล์ `.pkl` และรายชื่อคอลัมน์ที่เกี่ยวข้อง
-* 📁 `notebooks/`: เก็บไฟล์ Jupyter Notebook (`01_data_analysis_and_training.ipynb`) ที่ใช้สำหรับขั้นตอนการสำรวจข้อมูล (EDA) และการเทรนโมเดล
-* 📁 `src/`: โฟลเดอร์เก็บซอร์สโค้ดหลักสำหรับรันหน้าเว็บแอปพลิเคชัน (`app.py`)
-* 📄 `README.md`: ไฟล์เอกสารอธิบายรายละเอียดและวิธีใช้งานโปรเจกต์
-* 📄 `requirements.txt`: ไฟล์ระบุรายการ Library และ Version ที่จำเป็นต้องใช้ในการรันแอป
+```text
+.
+├── data/                       # โฟลเดอร์เก็บข้อมูล
+│   └── bkk_tokyo_flight_prices.csv
+├── images/                     # โฟลเดอร์เก็บรูปภาพประกอบใน README และ App
+├── models/                     # โฟลเดอร์เก็บโมเดลที่เทรนเสร็จแล้ว (.pkl)
+│   ├── flight_price_model.pkl
+│   └── model_columns.pkl
+├── notebooks/                  # โฟลเดอร์เก็บไฟล์ Jupyter Notebook สำหรับการวิเคราะห์
+│   └── 01_data_analysis_and_training.ipynb
+├── src/                        # โฟลเดอร์เก็บ Source Code หลัก
+│   ├── app.py                  # ไฟล์หลักสำหรับรัน Streamlit Web App
+│   └── info.html               # ไฟล์ HTML infographic
+├── README.md                   # ไฟล์อธิบายรายละเอียดโปรเจกต์
+└── requirements.txt            # ไฟล์ระบุ Library ที่ต้องใช้ในการรันโปรเจกต์
+```
 
 
 ## 🚀 Getting Started
@@ -69,4 +78,4 @@
 
 
 ## 💖 Credits
-โปรเจกต์นี้เป็นส่วนหนึ่งของวิชา **AIE322** (Mini-Project) พัฒนาโดย **ลลิตวดี วงศ์คูณ**
+โปรเจกต์นี้เป็นส่วนหนึ่งของวิชา **AIE322 - Supervised Machine Learning** (Mini-Project) พัฒนาโดย **ลลิตวดี วงศ์คูณ**
