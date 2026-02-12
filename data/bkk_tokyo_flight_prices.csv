@@ -1,0 +1,301 @@
+Airline,Flight_Type,Days_to_Flight,Day_of_Week,Price_THB,Day_Name
+Zipair,Direct,109,2,6940,Wed
+JAL,Direct,116,4,23800,Fri
+Thai Airways,Direct,94,1,18570,Tue
+Thai Vietjet,Direct,47,6,6040,Sun
+Thai AirAsia X,Direct,99,0,5540,Mon
+Thai AirAsia X,Transit,55,5,6280,Sat
+Thai AirAsia X,Direct,168,2,5070,Wed
+ANA,Direct,52,2,21300,Wed
+Thai Airways,Direct,144,0,18380,Mon
+Thai Airways,Direct,13,4,23550,Fri
+Thai AirAsia X,Direct,114,0,5420,Mon
+JAL,Direct,124,1,21850,Tue
+ANA,Direct,106,0,21030,Mon
+Thai AirAsia X,Direct,158,2,5640,Wed
+Thai AirAsia X,Direct,147,6,7440,Sun
+Thai AirAsia X,Direct,145,0,5950,Mon
+Zipair,Direct,120,4,8380,Fri
+Thai Vietjet,Direct,63,6,6560,Sun
+Zipair,Direct,19,5,9000,Sat
+Thai AirAsia X,Direct,92,3,5020,Thu
+Thai Airways,Direct,58,0,18970,Mon
+Thai AirAsia X,Direct,90,4,6680,Fri
+Thai AirAsia X,Direct,117,6,7210,Sun
+Zipair,Direct,62,4,8000,Fri
+Thai Vietjet,Direct,23,5,7330,Sat
+Thai Airways,Direct,127,2,18280,Wed
+Thai AirAsia X,Direct,137,4,6560,Fri
+Thai Vietjet,Direct,140,6,6460,Sun
+Thai Vietjet,Direct,129,4,6460,Fri
+Thai AirAsia X,Direct,58,4,6660,Fri
+Thai Airways,Direct,122,4,20380,Fri
+Thai AirAsia X,Direct,1,1,9630,Tue
+Thai AirAsia X,Direct,34,1,5850,Tue
+JAL,Direct,96,2,21580,Wed
+JAL,Direct,126,0,21860,Mon
+ANA,Direct,118,4,22690,Fri
+Zipair,Direct,48,5,7650,Sat
+Thai AirAsia X,Transit,89,0,4800,Mon
+Thai Airways,Direct,117,5,19840,Sat
+Zipair,Direct,129,0,6480,Mon
+Thai AirAsia X,Direct,16,2,6500,Wed
+Thai Vietjet,Transit,69,4,5640,Fri
+Thai AirAsia X,Direct,22,4,8110,Fri
+JAL,Direct,93,3,21640,Thu
+Thai AirAsia X,Direct,76,5,7490,Sat
+Thai Airways,Direct,154,0,18210,Mon
+Zipair,Direct,144,0,6430,Mon
+Thai Vietjet,Transit,179,1,4470,Tue
+Thai Vietjet,Direct,86,3,5250,Thu
+Thai AirAsia X,Direct,29,6,8070,Sun
+JAL,Direct,69,6,23670,Sun
+Thai Airways,Direct,47,1,18280,Tue
+JAL,Direct,94,1,21800,Tue
+ANA,Direct,144,1,20930,Tue
+Thai Vietjet,Direct,176,5,6280,Sat
+JAL,Direct,85,5,23280,Sat
+Thai AirAsia X,Direct,39,2,5140,Wed
+Thai AirAsia X,Transit,100,2,4600,Wed
+Thai AirAsia X,Transit,33,1,4190,Tue
+Zipair,Direct,101,3,6020,Thu
+Zipair,Direct,23,0,7400,Mon
+Thai AirAsia X,Transit,10,5,6760,Sat
+ANA,Direct,69,3,21000,Thu
+Zipair,Direct,100,4,8490,Fri
+Thai AirAsia X,Direct,34,5,6610,Sat
+Thai Vietjet,Transit,138,5,5190,Sat
+Thai AirAsia X,Transit,147,2,4400,Wed
+ANA,Direct,96,0,21180,Mon
+Thai AirAsia X,Direct,1,0,9530,Mon
+JAL,Direct,69,6,23900,Sun
+Thai Airways,Direct,4,6,29430,Sun
+Thai AirAsia X,Direct,16,6,8890,Sun
+Thai AirAsia X,Transit,24,6,7380,Sun
+ANA,Direct,80,4,22880,Fri
+Thai Airways,Direct,2,4,31790,Fri
+Thai Airways,Direct,128,5,19590,Sat
+Thai Airways,Direct,160,1,18050,Tue
+Thai AirAsia X,Direct,84,2,5480,Wed
+Zipair,Direct,152,2,6800,Wed
+Thai AirAsia X,Transit,140,6,5850,Sun
+ANA,Direct,178,5,22390,Sat
+Thai Airways,Direct,163,3,18350,Thu
+Zipair,Direct,124,1,6010,Tue
+Thai AirAsia X,Direct,33,5,7330,Sat
+Zipair,Direct,161,1,6310,Tue
+Zipair,Direct,179,1,6760,Tue
+Thai Airways,Direct,171,1,18830,Tue
+Thai Airways,Direct,101,5,20480,Sat
+ANA,Direct,12,6,25690,Sun
+Thai Vietjet,Transit,67,2,3910,Wed
+Thai AirAsia X,Direct,65,2,5050,Wed
+Thai Airways,Direct,161,6,20260,Sun
+Thai Airways,Direct,168,1,18240,Tue
+Thai Vietjet,Direct,74,3,4530,Thu
+Thai Airways,Direct,43,0,18580,Mon
+Thai Vietjet,Direct,44,5,5850,Sat
+Thai Vietjet,Transit,29,0,4780,Mon
+Zipair,Direct,141,6,7920,Sun
+Thai AirAsia X,Direct,12,3,6520,Thu
+Thai AirAsia X,Direct,95,5,6580,Sat
+Thai AirAsia X,Direct,46,6,6790,Sun
+Thai Airways,Direct,130,1,18120,Tue
+Zipair,Direct,35,2,6810,Wed
+Thai Vietjet,Transit,81,0,4070,Mon
+JAL,Direct,90,4,23910,Fri
+Thai AirAsia X,Direct,8,4,7650,Fri
+Zipair,Direct,93,3,6180,Thu
+Thai Airways,Direct,154,1,18470,Tue
+Thai AirAsia X,Transit,90,0,5080,Mon
+Thai AirAsia X,Direct,162,1,5730,Tue
+Thai AirAsia X,Direct,115,0,5820,Mon
+Thai AirAsia X,Direct,105,3,5940,Thu
+JAL,Direct,135,3,22480,Thu
+ANA,Direct,58,4,22010,Fri
+Thai Airways,Direct,114,1,18330,Tue
+ANA,Direct,75,5,22770,Sat
+ANA,Direct,157,4,22670,Fri
+Thai AirAsia X,Direct,120,1,5150,Tue
+ANA,Direct,164,4,22080,Fri
+Thai Vietjet,Transit,21,5,5890,Sat
+ANA,Direct,164,2,21410,Wed
+ANA,Direct,138,2,21050,Wed
+Zipair,Direct,101,2,6280,Wed
+Thai AirAsia X,Direct,152,2,5700,Wed
+Thai AirAsia X,Direct,177,6,6580,Sun
+Zipair,Direct,99,0,6510,Mon
+ANA,Direct,36,6,22900,Sun
+ANA,Direct,96,6,22810,Sun
+Thai AirAsia X,Transit,152,6,6380,Sun
+Thai Vietjet,Direct,151,2,5220,Wed
+Zipair,Direct,37,5,8020,Sat
+Thai AirAsia X,Direct,12,3,6220,Thu
+Thai AirAsia X,Transit,113,3,4880,Thu
+Zipair,Direct,13,0,7810,Mon
+JAL,Direct,23,2,28160,Wed
+Zipair,Direct,99,2,6930,Wed
+Thai Vietjet,Direct,105,2,4560,Wed
+Thai Airways,Direct,30,4,23620,Fri
+Zipair,Direct,17,1,8640,Tue
+JAL,Direct,113,4,23500,Fri
+JAL,Direct,62,1,22000,Tue
+Thai AirAsia X,Direct,84,2,5850,Wed
+Thai Vietjet,Transit,112,2,3940,Wed
+Zipair,Direct,86,4,7780,Fri
+Thai AirAsia X,Direct,141,4,7090,Fri
+Thai AirAsia X,Direct,19,1,7140,Tue
+Thai Airways,Direct,177,3,18060,Thu
+Thai Vietjet,Direct,100,1,5030,Tue
+Thai AirAsia X,Transit,140,4,5800,Fri
+Thai AirAsia X,Direct,147,5,7240,Sat
+JAL,Direct,76,4,23720,Fri
+Thai AirAsia X,Direct,9,5,7790,Sat
+Thai AirAsia X,Transit,28,0,5440,Mon
+Thai Vietjet,Transit,128,4,6040,Fri
+JAL,Direct,52,0,21740,Mon
+Thai AirAsia X,Direct,83,3,5280,Thu
+Thai Airways,Direct,111,1,18360,Tue
+Thai Airways,Direct,144,5,19700,Sat
+Thai AirAsia X,Direct,117,1,5760,Tue
+Thai Airways,Direct,69,0,18280,Mon
+Zipair,Direct,99,5,7730,Sat
+Thai Airways,Direct,140,1,18490,Tue
+Thai Airways,Direct,25,4,25430,Fri
+Thai Vietjet,Direct,123,2,4330,Wed
+Thai AirAsia X,Transit,53,0,4280,Mon
+ANA,Direct,151,1,21110,Tue
+Zipair,Direct,144,0,6730,Mon
+Thai AirAsia X,Direct,57,6,7300,Sun
+Thai AirAsia X,Direct,39,0,5070,Mon
+Thai Vietjet,Transit,109,5,5920,Sat
+Thai Airways,Direct,42,6,19640,Sun
+Thai AirAsia X,Transit,167,5,5800,Sat
+Thai Vietjet,Direct,142,2,5150,Wed
+Thai AirAsia X,Transit,122,6,5720,Sun
+Thai Airways,Direct,133,4,19860,Fri
+Thai AirAsia X,Direct,163,0,5040,Mon
+Thai Airways,Direct,75,1,18930,Tue
+Zipair,Direct,146,3,6030,Thu
+JAL,Direct,76,0,21520,Mon
+Thai AirAsia X,Transit,9,0,6020,Mon
+Zipair,Direct,74,2,6380,Wed
+Thai AirAsia X,Direct,145,4,7090,Fri
+JAL,Direct,7,3,32990,Thu
+ANA,Direct,174,6,22340,Sun
+Thai AirAsia X,Direct,141,6,7480,Sun
+Thai Airways,Direct,168,6,19530,Sun
+ANA,Direct,170,5,22820,Sat
+Thai Vietjet,Transit,137,5,5370,Sat
+Thai Vietjet,Direct,178,1,4940,Tue
+Thai AirAsia X,Direct,27,3,6960,Thu
+Thai AirAsia X,Transit,122,6,5940,Sun
+ANA,Direct,5,5,36540,Sat
+JAL,Direct,29,1,25160,Tue
+Thai Airways,Direct,165,4,19900,Fri
+Zipair,Direct,166,1,6920,Tue
+Zipair,Direct,83,5,8480,Sat
+Thai Airways,Direct,136,2,18480,Wed
+ANA,Direct,109,2,21200,Wed
+ANA,Direct,65,6,22630,Sun
+Thai Airways,Direct,86,2,18560,Wed
+Thai Airways,Direct,145,6,20080,Sun
+Thai AirAsia X,Transit,71,6,5800,Sun
+Thai AirAsia X,Direct,45,5,7320,Sat
+ANA,Direct,132,2,20860,Wed
+Thai Airways,Direct,36,6,20200,Sun
+Thai AirAsia X,Direct,70,3,5820,Thu
+Thai AirAsia X,Direct,159,4,7190,Fri
+Thai Airways,Direct,19,1,22870,Tue
+Thai AirAsia X,Direct,108,1,5030,Tue
+Thai AirAsia X,Direct,167,5,6650,Sat
+Thai Vietjet,Direct,91,2,5080,Wed
+Thai Airways,Direct,90,2,18300,Wed
+Thai Airways,Direct,19,6,23640,Sun
+Thai AirAsia X,Transit,39,0,4290,Mon
+Thai Airways,Direct,126,6,19690,Sun
+Thai AirAsia X,Direct,173,4,7310,Fri
+Zipair,Direct,141,3,6740,Thu
+Thai Airways,Direct,126,1,18230,Tue
+Thai Airways,Direct,58,6,19810,Sun
+ANA,Direct,148,0,20600,Mon
+Thai Airways,Direct,61,0,18050,Mon
+Thai Vietjet,Direct,127,6,6420,Sun
+Thai AirAsia X,Direct,105,5,7160,Sat
+Zipair,Direct,167,1,6760,Tue
+Thai AirAsia X,Transit,1,5,8110,Sat
+Thai AirAsia X,Direct,131,3,5290,Thu
+JAL,Direct,92,0,22260,Mon
+Zipair,Direct,113,0,6550,Mon
+ANA,Direct,153,4,22750,Fri
+Thai Airways,Direct,56,3,18150,Thu
+Thai Airways,Direct,161,0,18470,Mon
+Thai Vietjet,Direct,166,3,5040,Thu
+Thai Vietjet,Direct,117,1,4540,Tue
+Thai Vietjet,Direct,134,2,4790,Wed
+Thai AirAsia X,Direct,58,0,5850,Mon
+Thai Airways,Direct,44,4,20460,Fri
+Thai AirAsia X,Transit,173,1,4680,Tue
+Thai AirAsia X,Transit,160,6,6040,Sun
+Thai Airways,Direct,173,3,18480,Thu
+Thai AirAsia X,Direct,61,6,6700,Sun
+JAL,Direct,47,5,23150,Sat
+JAL,Direct,149,1,21950,Tue
+JAL,Direct,80,6,23500,Sun
+Zipair,Direct,118,0,6070,Mon
+Thai AirAsia X,Direct,164,3,5710,Thu
+JAL,Direct,147,2,21800,Wed
+Zipair,Direct,20,1,7810,Tue
+JAL,Direct,146,0,21560,Mon
+JAL,Direct,47,4,23940,Fri
+ANA,Direct,49,5,22620,Sat
+Thai AirAsia X,Transit,14,3,5090,Thu
+Zipair,Direct,143,1,6800,Tue
+ANA,Direct,159,1,20630,Tue
+Zipair,Direct,1,2,8910,Wed
+Thai AirAsia X,Transit,117,2,4350,Wed
+Thai Vietjet,Direct,54,4,6230,Fri
+JAL,Direct,118,5,23480,Sat
+Thai Airways,Direct,3,4,27460,Fri
+Thai Vietjet,Direct,144,0,4570,Mon
+Thai AirAsia X,Direct,12,0,6850,Mon
+Thai Airways,Direct,74,4,20320,Fri
+JAL,Direct,16,5,26130,Sat
+Thai AirAsia X,Direct,102,4,7070,Fri
+Thai Vietjet,Transit,152,5,5900,Sat
+ANA,Direct,156,5,22500,Sat
+Thai Airways,Direct,117,6,20310,Sun
+Thai Airways,Direct,8,3,20760,Thu
+Thai Airways,Direct,122,5,19720,Sat
+Zipair,Direct,92,2,6340,Wed
+Thai AirAsia X,Transit,164,5,6450,Sat
+ANA,Direct,90,5,22990,Sat
+ANA,Direct,136,5,22660,Sat
+ANA,Direct,60,6,22080,Sun
+JAL,Direct,178,6,23730,Sun
+Thai Vietjet,Transit,28,0,5550,Mon
+Thai Vietjet,Direct,101,6,6510,Sun
+Thai Airways,Direct,41,2,18200,Wed
+Thai Airways,Direct,155,2,18540,Wed
+Thai Airways,Direct,145,6,19960,Sun
+Thai Airways,Direct,161,4,19590,Fri
+ANA,Direct,157,3,20770,Thu
+Zipair,Direct,141,6,8150,Sun
+Zipair,Direct,46,5,8070,Sat
+Thai AirAsia X,Direct,35,1,5920,Tue
+Thai Vietjet,Transit,134,3,4070,Thu
+Thai AirAsia X,Transit,82,3,5050,Thu
+Thai Vietjet,Direct,115,2,4840,Wed
+Thai Vietjet,Transit,47,3,3630,Thu
+Thai AirAsia X,Transit,153,6,5960,Sun
+Thai Vietjet,Direct,10,5,7670,Sat
+Thai AirAsia X,Direct,56,5,6900,Sat
+Thai AirAsia X,Direct,30,0,6730,Mon
+ANA,Direct,109,5,22080,Sat
+Zipair,Direct,5,5,13260,Sat
+Thai AirAsia X,Direct,119,2,5330,Wed
+Thai Vietjet,Direct,33,5,6430,Sat
+Thai Airways,Direct,118,0,18520,Mon
+Thai AirAsia X,Transit,65,1,4310,Tue
+Thai Airways,Direct,146,6,20380,Sun
+Thai AirAsia X,Direct,177,2,5690,Wed
