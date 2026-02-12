@@ -40,7 +40,7 @@
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/miyomui/Mini-ProjectAIE322-Flight-Price-Prediction.git](https://github.com/miyomui/Mini-ProjectAIE322-Flight-Price-Prediction.git)
+    git clone https://github.com/miyomui/Mini-ProjectAIE322-Flight-Price-Prediction.git
     ```
 
 2.  **Install dependencies:**
