@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Flight Predictor - Interactive Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Mali', cursive;
+            background-color: #FFF0F5;
+            color: #6B4C5E;
+            scroll-behavior: smooth;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .sakura-bg {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAGFBMVEUAAAD/39//39//39//39//39//39//39/P4Mv0AAAACHRSTlMA78f3v7+v78e9Nl8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAABTSURBVDjLY2AYBYMJIByMBoNhFBAOnDlw4MCZA2cOnDlw5sCZA2cOnDlw5sCZA2cOnDlw5sCZA2cOnDlw5sCZA2cOnDlw5sCZA2cOnDlw5sCZA6MRAAC5vRVW6h1vVAAAAABJRU5ErkJggg==');
+            background-repeat: repeat;
+            opacity: 0.1;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px -5px rgba(216, 27, 96, 0.1);
+            border: 2px solid #FFD1DC;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .btn-pink {
+            background: linear-gradient(135deg, #FF6B9D 0%, #FFB3D9 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+            transition: all 0.3s ease;
+        }
+        .btn-pink:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Chosen Palette: Sakura Bloom (Warm Neutrals and Soft Pinks) -->
+    <!-- Application Structure Plan: 
+        ใช้วิธี Dashboard-style single page ที่มีสัดส่วนชัดเจน แบ่งเป็น 4 ส่วนหลัก:
+        1. Hero: แนะนำเป้าหมายโครงการและปัญหาที่พบ
+        2. Data Insights: แสดงข้อมูลที่ใช้เทรนโมเดลผ่านกราฟและไอคอน
+        3. Intelligence: ส่วนแสดงผลลัพธ์ R2 และ RMSE พร้อมอธิบายอัลกอริทึม
+        4. Application Preview: โชว์ UI/UX และลิงก์การใช้งาน
+        เหตุผลที่เลือกโครงสร้างนี้: เพื่อให้ผู้ใช้เห็นลำดับความสำคัญจากที่มาไปสู่ผลลัพธ์ที่จับต้องได้จริง (แอปพลิเคชัน)
+    -->
+    <!-- Visualization & Content Choices:
+        - Goal: Inform -> Single Big Numbers (96.14%) -> ใช้สำหรับ R2 Score เพื่อความโดดเด่น
+        - Goal: Compare -> Bar Chart (Chart.js) -> ใช้เปรียบเทียบปัจจัย Features ที่มีผลต่อราคา
+        - Goal: Change -> Line Chart (Chart.js) -> แสดงแนวโน้มราคาตาม "จำนวนวันจองล่วงหน้า"
+        - Goal: Organize -> Cards with Icons -> อธิบายรายละเอียด 4 Features หลัก
+        - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
+    -->
+
+    <div class="sakura-bg"></div>
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-pink-100 py-3">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="text-2xl">🌸</span>
+                <span class="font-bold text-pink-600 hidden md:inline">Japan Flight Predictor</span>
+            </div>
+            <div class="flex gap-4 text-sm font-semibold">
+                <a href="#origin" class="hover:text-pink-500 transition">ที่มา</a>
+                <a href="#data" class="hover:text-pink-500 transition">ข้อมูล</a>
+                <a href="#model" class="hover:text-pink-500 transition">โมเดล</a>
+                <a href="#preview" class="hover:text-pink-500 transition">ตัวอย่างแอป</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- Hero Section -->
+        <section id="origin" class="mb-16 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-pink-600 mb-6 drop-shadow-sm">Japan Flight Predictor</h1>
+                <p class="text-lg md:text-xl mb-8 leading-relaxed">
+                    ราคาตั๋วเครื่องบิน BKK ✈ TOKYO ผันผวนตลอดเวลา เราจึงสร้างเครื่องมือทำนายราคาเพื่อช่วยจัดการงบประมาณ <span class="text-pink-600 font-bold">40,000 - 50,000 บาท</span> ให้คุ้มค่าที่สุด
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 mt-12">
+                    <div class="card p-8 flex flex-col items-center">
+                        <span class="text-4xl mb-4">📉</span>
+                        <h3 class="font-bold text-xl mb-2">Pain Point</h3>
+                        <p class="text-sm">ราคามีความผันผวนสูงตามสายการบินและเวลาจอง ทำให้กะงบประมาณได้ยาก</p>
+                    </div>
+                    <div class="card p-8 flex flex-col items-center">
+                        <span class="text-4xl mb-4">💡</span>
+                        <h3 class="font-bold text-xl mb-2">Solution</h3>
+                        <p class="text-sm">Web App ที่วิเคราะห์แนวโน้มราคาด้วย Machine Learning เพื่อช่วยการตัดสินใจ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Section -->
+        <section id="data" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-12">ข้อมูลและการวิเคราะห์</h2>
+            <div class="grid md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-7">
+                    <div class="chart-container">
+                        <canvas id="featureChart"></canvas>
+                    </div>
+                    <p class="text-center text-xs mt-4 text-gray-500 italic">กราฟแสดงแนวโน้มราคาเฉลี่ยตามจำนวนวันจองล่วงหน้า (Booking Lead Time)</p>
+                </div>
+                <div class="md:col-span-5">
+                    <div class="card p-6 bg-pink-50">
+                        <h3 class="font-bold text-lg mb-4 text-pink-700">4 ปัจจัยสำคัญ (Features)</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3">
+                                <span class="bg-white p-2 rounded-lg shadow-sm">✈️</span>
+                                <div><span class="font-bold">Airline:</span> สายการบินยอดนิยม</div>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="bg-white p-2 rounded-lg shadow-sm">🎫</span>
+                                <div><span class="font-bold">Flight Type:</span> บินตรง หรือ ต่อเครื่อง</div>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="bg-white p-2 rounded-lg shadow-sm">📅</span>
+                                <div><span class="font-bold">Day Name:</span> วันเดินทาง (จันทร์-อาทิตย์)</div>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="bg-white p-2 rounded-lg shadow-sm">⏳</span>
+                                <div><span class="font-bold">Lead Time:</span> วันจองล่วงหน้า (1-180 วัน)</div>
+                            </li>
+                        </ul>
+                        <div class="mt-6 pt-6 border-t border-pink-200 text-center">
+                            <span class="text-sm">รวบรวมข้อมูลคุณภาพรวม <span class="font-bold text-pink-600">300 แถว</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Model Section -->
+        <section id="model" class="mb-16 bg-white/60 p-8 rounded-[3rem] border-2 border-dashed border-pink-300">
+            <h2 class="text-3xl font-bold text-center mb-12">การวัดผลประสิทธิภาพโมเดล</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="md:col-span-1 text-center">
+                    <div class="text-sm font-bold uppercase tracking-widest text-gray-400 mb-2">Algorithm</div>
+                    <div class="text-xl font-bold text-pink-600">Multiple Linear Regression</div>
+                    <p class="text-xs mt-4 leading-relaxed">ค้นหาความสัมพันธ์เชิงเส้นระหว่างปัจจัยต่างๆ เพื่อคาดการณ์ราคาตั๋วที่แม่นยำที่สุด</p>
+                </div>
+                <div class="md:col-span-2 grid grid-cols-2 gap-4">
+                    <div class="bg-white p-6 rounded-2xl shadow-inner text-center border border-pink-100">
+                        <div class="text-xs text-gray-500 mb-1">ความแม่นยำ (R2 Score)</div>
+                        <div class="text-4xl md:text-5xl font-black text-pink-500">96.14%</div>
+                        <div class="text-[10px] mt-2 text-green-600">● แม่นยำระดับยอดเยี่ยม</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-inner text-center border border-pink-100">
+                        <div class="text-xs text-gray-500 mb-1">ความคลาดเคลื่อน (RMSE)</div>
+                        <div class="text-4xl md:text-5xl font-black text-pink-500">1,508</div>
+                        <div class="text-[10px] mt-2 text-blue-600">● หน่วย: บาท</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preview Section -->
+        <section id="preview" class="mb-16">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">🌸 UI/UX Design</h2>
+                    <p class="mb-6">แอปพลิเคชันถูกออกแบบภายใต้แนวคิด <span class="font-bold italic text-pink-600">"Modern Japanese Sakura"</span> ให้ความรู้สึกละมุนตาและใช้งานง่าย</p>
+                    <div class="space-y-4">
+                        <div class="flex gap-4">
+                            <span class="text-2xl">🎨</span>
+                            <div>
+                                <h4 class="font-bold">Pink Pastel Theme</h4>
+                                <p class="text-sm text-gray-600">ใช้โทนสีชมพูพาสเทลให้ความรู้สึกผ่อนคลายและเป็นมิตร</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="text-2xl">🕹️</span>
+                            <div>
+                                <h4 class="font-bold">Interactive Experience</h4>
+                                <p class="text-sm text-gray-600">ใช้ Slider และ Dropdown เพื่อความง่ายในการระบุเงื่อนไข</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="text-2xl">🎉</span>
+                            <div>
+                                <h4 class="font-bold">Visual Rewards</h4>
+                                <p class="text-sm text-gray-600">Custom Boarding Pass และแอนิเมชันลูกโป่งเมื่อคำนวณเสร็จ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10">
+                        <a href="https://miyomui-flight-price-prediction.streamlit.app/" target="_blank" class="btn-pink inline-block">
+                            ลองใช้งานแอปจริงที่นี่ ✈️
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <!-- Placeholder UI Preview using HTML/CSS -->
+                    <div class="bg-white border-[10px] border-pink-200 rounded-[2rem] shadow-2xl overflow-hidden aspect-[9/16] relative">
+                        <div class="h-20 bg-pink-100 flex items-center justify-center font-bold text-pink-600">Japan Flight Predictor</div>
+                        <div class="p-4 space-y-4">
+                            <div class="h-4 bg-gray-100 rounded w-1/2"></div>
+                            <div class="h-8 bg-gray-50 border border-gray-200 rounded"></div>
+                            <div class="h-4 bg-gray-100 rounded w-2/3"></div>
+                            <div class="h-20 bg-pink-50 border-2 border-dashed border-pink-200 rounded flex items-center justify-center text-xs text-pink-300">Predict Result Area</div>
+                            <div class="h-10 bg-pink-500 rounded-full"></div>
+                        </div>
+                        <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                             <span class="w-8 h-8 opacity-20">🎈</span>
+                             <span class="w-8 h-8 opacity-40">🎈</span>
+                             <span class="w-8 h-8 opacity-20">🎈</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-pink-100 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-pink-600 font-bold mb-4">Project by ลลิตวดี วงศ์คูณ</p>
+            <div class="flex justify-center gap-8 text-sm opacity-60">
+                <span>GitHub Managed</span>
+                <span>Streamlit Deployed</span>
+            </div>
+            <div class="mt-8 text-[10px] uppercase tracking-widest opacity-30">
+                AIE322 - Japan Flight Price Prediction Project
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data Preparation Logic
+        const leadTimeLabels = [
+            '1-30 วัน', 
+            '31-60 วัน', 
+            '61-90 วัน', 
+            '91-120 วัน', 
+            '121-150 วัน', 
+            '151-180 วัน'
+        ]; // Labels are all under 16 chars, no wrapping needed for these specific ones.
+
+        // Initialize Chart.js
+        const ctx = document.getElementById('featureChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: leadTimeLabels,
+                datasets: [{
+                    label: 'แนวโน้มราคาเฉลี่ย (THB)',
+                    data: [25000, 22000, 18000, 16000, 15500, 15000],
+                    borderColor: '#D81B60',
+                    backgroundColor: 'rgba(216, 27, 96, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 5,
+                    pointBackgroundColor: '#FFF'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: { font: { family: 'Mali' } }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        ticks: { font: { family: 'Mali' } }
+                    },
+                    x: {
+                        ticks: { font: { family: 'Mali' } }
+                    }
+                }
+            }
+        });
+
+        // Simple observer for scroll animations (interaction)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
